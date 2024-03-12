@@ -6,7 +6,7 @@ import { NerdGraphQuery } from 'nr1';
 const AGENT_NG_QUERY_DAY = `query($id: Int!) {
     actor {
         account(id: $id) {
-            nrql(query: "FROM NrDailyUsage select uniques(apmAgentVersion), latest(apmLanguage) as 'language', latest(apmAppName) as 'appName' since 1 day ago facet apmAppId limit 2000") {
+            nrql(query: "FROM NrDailyUsage select uniques(apmAgentVersion), latest(apmLanguage) as 'language', latest(apmAppName) as 'appName' since 1 day ago facet apmAppId limit 5000") {
                 results
             }
         }
@@ -15,7 +15,7 @@ const AGENT_NG_QUERY_DAY = `query($id: Int!) {
 const AGENT_NG_QUERY_WEEK = `query($id: Int!) {
     actor {
         account(id: $id) {
-            nrql(query: "FROM NrDailyUsage select uniques(apmAgentVersion), latest(apmLanguage) as 'language', latest(apmAppName) as 'appName' since 1 week ago facet apmAppId limit 2000") {
+            nrql(query: "FROM NrDailyUsage select uniques(apmAgentVersion), latest(apmLanguage) as 'language', latest(apmAppName) as 'appName' since 1 week ago facet apmAppId limit 5000") {
                 results
             }
         }
